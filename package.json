@@ -12,6 +12,7 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-inject": "^4.1.0",
+    "gulp-serve": "^1.4.0",
     "run-sequence": "^1.2.2"
   }
 }
