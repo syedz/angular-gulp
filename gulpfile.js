@@ -1,13 +1,27 @@
-var gulp = require('gulp'),
-    del = require('del'),
-    runSequence = require('run-sequence');
+var gulp        = require('gulp'),
+    del         = require('del'),
+    runSequence = require('run-sequence'),
+    inject      = require('gulp-inject');
 
 gulp.task('default', function(callback) {
   runSequence('build', callback);
 });
 
 gulp.task('build', function(callback) {
-  runSequence('clean', 'copy-build', callback);
+  runSequence('clean',
+    'copy-build',
+    'index',
+    callback);
+});
+
+gulp.task('index', function() {
+  var tpl_src = ['./build/vendor/**/*.js',
+    './build/app/**/*.js',
+    './build/assets/css/**/*.css'];
+
+  return gulp.src('./src/index.html')
+    .pipe(inject(gulp.src(tpl_src), { ignorePath: 'build' }))
+    .pipe(gulp.dest('./build'));
 });
 
 gulp.task('clean', function(callback) {
