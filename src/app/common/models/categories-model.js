@@ -4,7 +4,7 @@ angular.module('eggly.models.categories', [
     .service('CategoriesModel', function ($http, $q) {
         var model = this,
             URLS = {
-                FETCH: '/api/categories'
+                FETCH: '../data/categories/default.json'
             },
             categories,
             currentCategory;
@@ -25,7 +25,7 @@ angular.module('eggly.models.categories', [
         model.setCurrentCategory = function(category) {
             return model.getCategoryByName(category).then(function(category) {
                 currentCategory = category;
-            });
+            })
         };
 
         model.getCurrentCategory = function() {
@@ -42,7 +42,7 @@ angular.module('eggly.models.categories', [
             function findCategory(){
                 return _.find(categories, function(c){
                     return c.name == categoryName;
-                });
+                })
             }
 
             if(categories) {

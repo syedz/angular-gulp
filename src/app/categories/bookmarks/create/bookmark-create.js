@@ -6,7 +6,7 @@ angular.module('categories.bookmarks.create', [
             .state('eggly.categories.bookmarks.create', {
                 url: '/bookmarks/create',
                 //target the un-named 'ui-view' in PARENT states template
-                templateUrl: 'categories/bookmarks/create/bookmark-create.tmpl.html',
+                templateUrl: '/app/categories/bookmarks/create/bookmark-create.tmpl.html',
                 controller: 'CreateBookMarkCtrl as createBookmarkCtrl'
             })
         ;
@@ -17,7 +17,7 @@ angular.module('categories.bookmarks.create', [
         function returnToBookmarks() {
             $state.go('eggly.categories.bookmarks', {
                 category: $stateParams.category
-            });
+            })
         }
 
         function cancelCreating() {
