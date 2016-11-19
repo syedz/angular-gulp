@@ -1,12 +1,17 @@
 var gulp = require('gulp'),
+    del = require('del'),
     runSequence = require('run-sequence');
 
 gulp.task('default', function(callback) {
-  runSequence('copy-build', callback);
+  runSequence('build', callback);
 });
 
 gulp.task('build', function(callback) {
   runSequence('clean', 'copy-build', callback);
+});
+
+gulp.task('clean', function(callback) {
+  return del(['./build'], { force: true }, callback);
 });
 
 gulp.task('copy-build', ['copy-assets', 'copy-app-js', 'copy-vendor-js']);
