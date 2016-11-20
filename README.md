@@ -1,4 +1,2 @@
-eggly
-=====
-
-AngularJS bookmark manager.
+Angular + Gulp
+==============
