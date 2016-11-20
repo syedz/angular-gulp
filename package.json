@@ -12,7 +12,9 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-inject": "^4.1.0",
+    "gulp-jshint": "^2.0.4",
     "gulp-serve": "^1.4.0",
+    "jshint": "^2.9.4",
     "run-sequence": "^1.2.2"
   }
 }
